@@ -38,7 +38,9 @@ namespace Gleed2D.Core
 		/// <exception cref="ArgumentNullException"></exception>
 		public string MakeRelativePath(string fromPath, string toPath)
 		{
-			var fromUri = new Uri(fromPath);
+            var fromPathTrimmed = fromPath.TrimEnd('\\');
+
+            var fromUri = new Uri(fromPathTrimmed + '\\');
 
 			var toUri = new Uri(toPath);
 
